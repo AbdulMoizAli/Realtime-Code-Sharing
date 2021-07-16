@@ -138,29 +138,27 @@ function onEditorContentChange(editor) {
     );
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const queryStrings = new URLSearchParams(window.location.search);
-    const username = queryStrings.get('username');
-    const sessionId = queryStrings.get('sessionId');
+const queryStrings = new URLSearchParams(window.location.search);
+const username = queryStrings.get('username');
+const sessionId = queryStrings.get('sessionId');
 
-    document.querySelector('#sessionIdCopy').textContent = sessionId;
+document.querySelector('#sessionIdCopy').textContent = sessionId;
 
-    socket.emit('session-join', username, sessionId);
+socket.emit('session-join', username, sessionId);
 
-    socket.on('message', msg => {
-        M.toast({ html: msg, classes: 'rounded' });
-    });
+socket.on('message', msg => {
+    M.toast({ html: msg, classes: 'rounded' });
+});
 
-    socket.on('session-users', users => {
-        const element1 = document.querySelector('#sessionUsers');
-        const element2 = document.querySelector('#userCount');
-        let output = '';
+socket.on('session-users', users => {
+    const element1 = document.querySelector('#sessionUsers');
+    const element2 = document.querySelector('#userCount');
+    let output = '';
 
-        for (const user of users) {
-            output += `${user.username} <br />`;
-        }
+    for (const user of users) {
+        output += `${user.username} <br />`;
+    }
 
-        element1.setAttribute('data-tooltip', output);
-        element2.textContent = users.length;
-    });
+    element1.setAttribute('data-tooltip', output);
+    element2.textContent = users.length;
 });
