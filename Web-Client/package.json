@@ -1,0 +1,14 @@
+{
+    "name": "web-client",
+    "version": "1.0.0",
+    "description": "Web client for realtime code sharing and collaborating environment",
+    "main": "index.js",
+    "scripts": {
+        "web-client": "node index"
+    },
+    "author": "Abdul Moiz <moizali_@outlook.com> (https://github.com/AbdulMoizAli)",
+    "license": "MIT",
+    "devDependencies": {
+        "node-static": "^0.7.11"
+    }
+}

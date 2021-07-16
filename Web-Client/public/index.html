@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CodeShare - Home</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+        <style>
+            .input-field input[type='text']:focus + label {
+                color: #607d8b !important;
+            }
+
+            .input-field input[type='text']:focus {
+                border-bottom: 1px solid #607d8b !important;
+                box-shadow: 0 1px 0 0 #607d8b !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center">
+            <div class="row">
+                <div class="col l4 m12 s12 animate__animated animate__zoomIn">
+                    <img src="./images/image-1.svg" width="200" height="200" />
+                    <h4 class="container blue-grey-text">
+                        Real-time Code Editing
+                    </h4>
+                    <br />
+                    <div class="progress container">
+                        <div
+                            class="determinate blue-grey"
+                            style="width: 100%"
+                        ></div>
+                    </div>
+                    <br />
+                    <div class="container blue-grey-text flow-text">
+                        Share Code in Real-time with Developers. An online code
+                        editor for interviews, troubleshooting, teaching & more…
+                    </div>
+                </div>
+
+                <div class="col l4 m12 s12 animate__animated animate__zoomIn">
+                    <img src="./images/image-2.svg" width="200" height="200" />
+                    <h4 class="container blue-grey-text">
+                        Interview Developers
+                    </h4>
+                    <br />
+                    <div class="progress container">
+                        <div
+                            class="determinate blue-grey"
+                            style="width: 100%"
+                        ></div>
+                    </div>
+                    <br />
+                    <div class="container blue-grey-text flow-text">
+                        Set coding tasks and observe in real-time when
+                        interviewing remotely or in person. Nobody likes writing
+                        code on a whiteboard.
+                    </div>
+                </div>
+
+                <div class="col l4 m12 s12 animate__animated animate__zoomIn">
+                    <img src="./images/image-3.svg" width="200" height="200" />
+                    <h4 class="container blue-grey-text">Rich Text Editor</h4>
+                    <br />
+                    <div class="progress container">
+                        <div
+                            class="determinate blue-grey"
+                            style="width: 100%"
+                        ></div>
+                    </div>
+                    <br />
+                    <div class="container blue-grey-text flow-text">
+                        Rich coding experience, IntelliSense, Validation and
+                        Syntax Colorization for multiple programming languages.
+                    </div>
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <br />
+
+            <a
+                href="#newSession"
+                class="
+                    waves-effect waves-light
+                    blue-grey
+                    btn-large
+                    modal-trigger
+                    tooltipped
+                "
+                data-position="bottom"
+                data-tooltip="Create a new CodeShare session"
+                style="margin-bottom: 5%"
+            >
+                <i class="material-icons left">autorenew</i>
+                New Session
+            </a>
+
+            <span class="hide-on-med-and-down" style="margin-left: 3%"></span>
+
+            <a
+                href="#joinSession"
+                class="
+                    waves-effect waves-light
+                    blue-grey
+                    btn-large
+                    modal-trigger
+                    tooltipped
+                "
+                data-position="bottom"
+                data-tooltip="Join a CodeShare session using the session id"
+                style="margin-bottom: 5%"
+            >
+                <i class="material-icons left">add</i>
+                Join Session
+            </a>
+        </div>
+
+        <form action="./session.html">
+            <div id="newSession" class="modal">
+                <div class="modal-content">
+                    <h4>New Session</h4>
+                    <br />
+                    <div class="row">
+                        <div class="col l6">
+                            <div class="input-field">
+                                <input
+                                    id="name"
+                                    autocomplete="off"
+                                    type="text"
+                                    name="username"
+                                    required
+                                />
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="col l6">
+                            <div class="input-field">
+                                <input
+                                    id="sessionId"
+                                    type="text"
+                                    name="sessionId"
+                                    readonly
+                                />
+                                <label for="sessionId">Session ID</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-close waves-effect waves-light btn-flat"
+                        >Cancel</a
+                    >
+                    <button
+                        type="submit"
+                        class="waves-effect waves-light btn-flat"
+                    >
+                        OK
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <form action="./session.html">
+            <div id="joinSession" class="modal">
+                <div class="modal-content">
+                    <h4>Join Session</h4>
+                    <br />
+                    <div class="row">
+                        <div class="col l6">
+                            <div class="input-field">
+                                <input
+                                    id="name"
+                                    autocomplete="off"
+                                    type="text"
+                                    name="username"
+                                    required
+                                />
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="col l6">
+                            <div class="input-field">
+                                <input
+                                    id="sessionId"
+                                    type="text"
+                                    name="sessionId"
+                                    required
+                                    autocomplete="off"
+                                />
+                                <label for="sessionId">Session ID</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-close waves-effect waves-light btn-flat"
+                        >Cancel</a
+                    >
+                    <button
+                        type="submit"
+                        class="waves-effect waves-light btn-flat"
+                    >
+                        OK
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const modals = document.querySelectorAll('.modal');
+                const toolTips = document.querySelectorAll('.tooltipped');
+
+                M.Tooltip.init(toolTips);
+                M.Modal.init(modals);
+            });
+
+            function getUniqueId() {
+                const first = Math.random().toString(36).substr(2, 11);
+                const second = Math.random().toString(36).substr(2, 11);
+                return first.concat(second);
+            }
+
+            document.querySelector('#sessionId').value = getUniqueId();
+        </script>
+    </body>
+</html>

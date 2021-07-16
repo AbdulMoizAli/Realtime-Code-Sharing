@@ -1,0 +1,20 @@
+{
+    "name": "desktop-client",
+    "version": "1.0.0",
+    "description": "Desktop client for realtime code sharing and collaborating environment",
+    "main": "main.js",
+    "scripts": {
+        "desktop-client": "electron .",
+        "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=CodeShare"
+    },
+    "author": "Abdul Moiz <moizali_@outlook.com> (https://github.com/AbdulMoizAli)",
+    "license": "MIT",
+    "dependencies": {
+        "monaco-editor": "^0.25.2",
+        "socket.io": "^4.1.2"
+    },
+    "devDependencies": {
+        "electron": "^13.1.4",
+        "electron-packager": "^15.2.0"
+    }
+}
