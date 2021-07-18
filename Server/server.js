@@ -42,6 +42,8 @@ io.on('connection', socket => {
         socket.broadcast
             .to(user.sessionId)
             .emit('editor-content-change', editorContent);
+
+        socket.broadcast.to(user.sessionId).emit('typing', user.username);
     });
 
     socket.on('chat-message', message => {

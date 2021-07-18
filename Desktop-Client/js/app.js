@@ -200,6 +200,24 @@ function onEditorContentChange(editor) {
     socket.on('editor-content-change', editorContent =>
         editor.setValue(editorContent)
     );
+
+    let timeout = true;
+
+    socket.on('typing', username => {
+        const typing = document.querySelector('#typing');
+        const typingUsername = document.querySelector('#typing-username');
+
+        typingUsername.textContent = username;
+        typing.style.visibility = 'visible';
+
+        if (timeout) {
+            timeout = false;
+            setTimeout(() => {
+                typing.style.visibility = 'hidden';
+                timeout = true;
+            }, 1000);
+        }
+    });
 }
 
 const queryStrings = new URLSearchParams(window.location.search);
