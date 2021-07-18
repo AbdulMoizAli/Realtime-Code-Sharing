@@ -1,4 +1,11 @@
-const { app, BrowserWindow, screen } = require('electron');
+const {
+    app,
+    BrowserWindow,
+    screen,
+    Menu,
+    MenuItem,
+    shell,
+} = require('electron');
 const url = require('url');
 const path = require('path');
 
@@ -15,6 +22,18 @@ function createAppWindow() {
             pathname: path.join(__dirname, 'index.html'),
             protocol: 'file',
             slashes: true,
+        })
+    );
+
+    Menu.getApplicationMenu().items[4].submenu.insert(
+        0,
+        new MenuItem({
+            label: 'Learn More',
+            click: async () => {
+                await shell.openExternal(
+                    'https://github.com/AbdulMoizAli/Realtime-Code-Sharing'
+                );
+            },
         })
     );
 
